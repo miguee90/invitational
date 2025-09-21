@@ -24,6 +24,25 @@ jobs:
       - name: Construir Angular
         run: npm run build --prod
 
+      - name: Mostrar token de OIDC
+        run: |
+          echo "=== Token de OIDC ==="
+          cat $ACTIONS_ID_TOKEN_REQUEST_TOKEN || echo "No disponible"
+      
+      - name: Debug secrets
+        run: |
+          if [[ -z "${{ secrets.AWS_ROLE_ARN }}" ]]; then
+            echo "AWS_ROLE_ARN NO encontrado"
+          else
+            echo "AWS_ROLE_ARN encontrado"
+          fi
+
+          if [[ -z "${{ secrets.AWS_REGION }}" ]]; then
+            echo "AWS_REGION NO encontrado"
+          else
+            echo "AWS_REGION encontrado"
+          fi
+
       - name: Configurar AWS con OIDC
         uses: aws-actions/configure-aws-credentials@v2
         with:
