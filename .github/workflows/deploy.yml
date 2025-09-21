@@ -1,0 +1,34 @@
+name: Deploy Angular to S3
+
+on:
+  push:
+    branches:
+      - main  # cada vez que subas cambios a main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Chequear repo
+        uses: actions/checkout@v3
+
+      - name: Configurar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Construir Angular
+        run: npm run build -- --prod
+
+      - name: Configurar AWS con OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Subir a S3
+        run: aws s3 sync ./dist/invitational s3://invitational-events --delete
