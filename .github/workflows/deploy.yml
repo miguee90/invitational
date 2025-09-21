@@ -35,4 +35,4 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Subir a S3
-        run: aws s3 sync ./dist/invitational s3://invitational-events --delete
+        run: aws s3 sync ./dist/invitational/browser s3://invitational-events --delete
