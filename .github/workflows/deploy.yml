@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Construir Angular
-        run: npm run build -- --prod
+        run: npm run build --prod
 
       - name: Configurar AWS con OIDC
         uses: aws-actions/configure-aws-credentials@v2
