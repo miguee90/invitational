@@ -5,6 +5,10 @@ on:
     branches:
       - main  # cada vez que subas cambios a main
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
