@@ -1,65 +1,68 @@
 <div class="bg-gradient-to-br bg-[#f4f4f4] min-h-screen font-sans">
   <div class="container mx-auto p-4 md:p-8 space-y-8 animate-fade-in">
     <app-envelope (envelopeClick)="scrollToContent()"></app-envelope>
-    <div #contentBelow  class="bg-white rounded-3xl shadow-xl overflow-hidden p-6 md:p-12 text-center relative z-10 animate-slide-up">
-      <img
-        src="assets/img/pantalla1.jpg"
-        alt="Icono de sobre"
-        class="h-full w-full"
-      />
+    <div #contentBelow
+      class="bg-white rounded-3xl shadow-xl overflow-hidden p-6 md:p-12 text-center relative z-10 animate-slide-up">
+      <img src="assets/img/pantalla1.jpg" alt="Icono de sobre" class="h-full w-full" />
     </div>
     <div class="flex items-center justify-center p-4">
       <div class="w-16 h-1 bg-gray-300 rounded-full"></div>
     </div>
-    
-    <div id="detalles" class="bg-white rounded-3xl shadow-xl p-6 md:p-12 space-y-8 animate-slide-up animation-delay-300">
+
+    <div id="detalles"
+      class="bg-white rounded-3xl shadow-xl p-6 md:p-12 space-y-8 animate-slide-up animation-delay-300">
       <div class="text-center">
-        <h2 class="text-2xl md:text-4xl font-bold text-gray-800 font-serif mb-4">Te invito a celebrar</h2>
-        <p class="text-lg text-gray-600 leading-relaxed">
-          El inicio de una nueva etapa en mi vida, llena de sueños, metas y grandes logros.
+        <h2 class=" text-2xl md:text-4xl font-sans text-[#7a6200] font-serif mb-4">¡La fiesta ya está lista,
+          la pista te
+          espera y la música no parará!</h2>
+        <p class=" text-lg text-[#7a6200] leading-relaxed">
+          Te invito a ser parte de esta historia...
         </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
         <div class="bg-gray-50 rounded-2xl p-6 shadow-sm">
           <p class="text-gray-500 text-sm mb-2">Con la bendición de Dios y en compañía de:</p>
-          <p class="text-lg font-bold text-pink-500 mb-1">Mis Padres</p>
+          <p class="text-lg font-sans text-[#7a6200] mb-1">Mis Padres</p>
           <ul class="text-gray-700 space-y-1">
-            <li>Padre</li>
-            <li>Madre</li>
+            <li>Violeta Olvera González</li>
+            <li>José Dolores Contreras Martínez</li>
           </ul>
         </div>
         <div class="bg-gray-50 rounded-2xl p-6 shadow-sm">
           <p class="text-gray-500 text-sm mb-2">Con gran alegría me acompañan:</p>
-          <p class="text-lg font-bold text-pink-500 mb-1">Mis Padrinos</p>
+          <p class="text-lg font-sans text-[#7a6200] mb-1">Mis Padrinos</p>
           <ul class="text-gray-700 space-y-1">
-            <li>Padrino</li>
-            <li>Madrina</li>
+            <li>Erendira Vanessa Martinez</li>
+            <li>Juan Carlos Rayas</li>
           </ul>
         </div>
       </div>
-      
+
       <div class="text-center bg-gray-50 rounded-2xl p-6 shadow-sm">
-        <h3 class="text-xl font-bold text-pink-500 mb-2">Fecha y Hora</h3>
-        <p class="text-2xl text-gray-700 font-semibold mb-1">Sábado, 01 de julio 2026</p>
-        <p class="text-xl text-gray-700">19:00 hrs</p>
+        <h3 class="text-xl font-sans text-[#7a6200] mb-2">Fecha y Hora</h3>
+        <p class="text-2xl text-gray-700 font-semibold mb-1">Viernes, 19 de Diciembre 2025</p>
+        <p class="text-xl text-gray-700">17:00 hrs</p>
       </div>
     </div>
-    
+
     <style>
       @keyframes slide-up {
         from {
           opacity: 0;
           transform: translateY(20px);
         }
+
         to {
           opacity: 1;
           transform: translateY(0);
         }
       }
+
       .animate-slide-up {
         animation: slide-up 0.8s ease-out;
       }
+
       .animation-delay-300 {
         animation-delay: 0.3s;
       }
@@ -68,53 +71,53 @@
 </div>
 
 <div class="text-center p-8 bg-gray-100 rounded-lg shadow-lg">
-  <h2 class="text-4xl font-bold text-gray-800">Faltan</h2>
+  <h2 class="text-4xl font-sands text-[#7a6200]">Faltan</h2>
   <div class="flex justify-center space-x-4 mt-6">
     <div class="text-center">
-      <span class="block text-5xl font-bold text-blue-600"> days </span>
-      <span class="block text-sm font-medium text-gray-500">Días</span>
+      <span class="block text-5xl font-sans text-[#7a6200]"> {{dias}} </span>
+      <span class="block text-sm font-medium text-[#7a6200]">Días</span>
     </div>
     <div class="text-center">
-      <span class="block text-5xl font-bold text-blue-600"> hrs </span>
-      <span class="block text-sm font-medium text-gray-500">Hrs</span>
+      <span class="block text-5xl font-sans text-[#7a6200]"> {{horas}} </span>
+      <span class="block text-sm font-medium text-[#7a6200]">Hrs</span>
     </div>
     <div class="text-center">
-      <span class="block text-5xl font-bold text-blue-600"> mm </span>
-      <span class="block text-sm font-medium text-gray-500">Min</span>
+      <span class="block text-5xl font-sans text-[#7a6200]"> {{minutos}} </span>
+      <span class="block text-sm font-medium text-[#7a6200]">Min</span>
     </div>
     <div class="text-center">
-      <span class="block text-5xl font-bold text-blue-600"> ss </span>
-      <span class="block text-sm font-medium text-gray-500">Seg</span>
+      <span class="block text-5xl font-sans text-[#7a6200]"> {{segundos}} </span>
+      <span class="block text-sm font-medium text-[#7a6200]">Seg</span>
     </div>
   </div>
-  <h5 class="text-lg font-semibold text-gray-600 mt-4">para mis xv años</h5>
+  <h5 class="text-lg font-semibold text-gray-600 mt-4">Para mi fiesta!!!</h5>
 </div>
 
 <div class="p-8 bg-gray-100">
-  <h2 class="text-3xl font-bold text-center mb-6">Dónde y Cuándo</h2>
+  <h2 class="text-3xl text-[#7a6200] font-sans text-center mb-6">Dónde y Cuándo</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div class="bg-white p-6 rounded-lg shadow-md">
-      <img src="https://eventobonito.com/wp-content/uploads/2024/02/fotosdeiglesia.png" alt="Iglesia" class="w-full h-auto rounded-md mb-4">
-      <h2 class="text-xl font-bold mb-2">Ceremonia Religiosa</h2>
-      <p class="text-gray-700">Catedral de Santa María la Real de Almudena</p>
-      <p class="text-gray-700">18:00 hrs</p>
-      <p class="text-gray-700">C. de Bailén, 10, 28013 Madrid</p>
+      <img src="assets/img/iglesia.jpg" alt="Iglesia" class="w-full h-auto rounded-md mb-4">
+      <h2 class="text-xl font-sans mb-2">Ceremonia Religiosa</h2>
+      <p class="text-gray-700">Parroquia Del Señor de la Divina Misericordia 5:00 pm</p>
+      <p class="text-gray-700">El Capricho Jardin de Eventos a las 6 pm</p>
       <div class="text-center mt-4">
-        <a href="https://goo.gl/maps/1C2VDCj5oUn6GeEL8" class="inline-block px-4 py-2 text-sm text-white bg-blue-600 rounded hover:bg-blue-700 transition-colors">
+        <a href="https://maps.app.goo.gl/TnAqEhc18o9CqQrGA"
+          class="inline-block px-4 py-2 text-sm text-white bg-[#7a6200] rounded hover:bg-[#7a6200] transition-colors">
           VER MAPA
         </a>
       </div>
     </div>
 
     <div class="bg-white p-6 rounded-lg shadow-md">
-      <img src="https://eventobonito.com/wp-content/uploads/2024/02/fotosderecepcion.jpg" alt="Salón de recepción" class="w-full h-auto rounded-md mb-4">
-      <h2 class="text-xl font-bold mb-2">Recepción</h2>
-      <p class="text-gray-700">Salón de eventos El Mirador</p>
-      <p class="text-gray-700">20:00 hrs</p>
-      <p class="text-gray-700">C. del Espejo, 17, 28013 Madrid</p>
+      <img src="assets/img/garden.jpg" alt="Salón de recepción" class="w-full h-auto rounded-md mb-4">
+      <h2 class="text-xl font-sans mb-2">Recepción</h2>
+      <p class="text-gray-700">El Capricho Jardin de Eventos </p>
+      <p class="text-gray-700">6:00 pm</p>
       <div class="text-center mt-4">
-        <a href="https://goo.gl/maps/Q3f4g7N5pPj8L5r6" class="inline-block px-4 py-2 text-sm text-white bg-blue-600 rounded hover:bg-blue-700 transition-colors">
+        <a href="https://maps.app.goo.gl/pg9owYp9Vnrb8Thn8"
+          class="inline-block px-4 py-2 text-sm text-white bg-[#7a6200] rounded hover:bg-[#7a6200] transition-colors">
           VER MAPA
         </a>
       </div>
@@ -122,113 +125,79 @@
   </div>
 </div>
 
-<div class="relative p-8">
-  <div class="uael-timeline-wrapper relative">
-    <div class="uael-timeline-main relative">
-      <div class="uael-timeline__line absolute top-0 bottom-0 w-px bg-gray-300 left-1/2 -translate-x-1/2"></div>
+<div class="relative p-8 bg-gray-50">
+  <div class="relative max-w-4xl mx-auto">
+    <!-- Línea central -->
+    <div class="absolute top-0 bottom-0 w-px bg-gray-300 left-1/2 -translate-x-1/2"></div>
 
-      <div class="uael-timeline-field relative mb-12">
-        <div class="uael-timeline-widget uael-timeline-right text-right pr-12">
-          <div class="uael-timeline-marker absolute top-0 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 border-2 border-gray-300">
-            <i class="far fa-heart text-gray-500"></i>
-          </div>
-          <div class="uael-day-new bg-white p-6 rounded-lg shadow-md">
-            <div class="uael-timeline-date-hide">
-              <p class="text-sm font-bold text-gray-700">17:30 HRS</p>
-            </div>
-            <div class="uael-content mt-2">
-              <h2 class="uael-timeline-heading text-xl font-bold text-gray-800">Ceremonia Religiosa</h2>
-              <div class="uael-timeline-desc-content mt-2">
-                <img loading="lazy" decoding="async" class="w-24 h-24 mx-auto" src="https://eventobonito.com/wp-content/uploads/2024/02/iconocolordoradoiglesia-300x300.png" alt="Icono de iglesia">
-              </div>
-            </div>
+    <!-- Evento 1 - Derecha -->
+    <div class="relative mb-12 flex justify-start">
+      <div class="w-1/2 pr-8">
+        <div class="relative bg-white p-6 rounded-lg shadow-md">
+          <p class="text-sm font-sans text-gray-700 text-right">17:00 HRS</p>
+          <h2 class="text-xl font-sans text-gray-800 mt-2 text-right">Ceremonia Religiosa</h2>
+          <div class="mt-4 flex justify-center">
+            <img class="w-24 h-24"
+              src="https://eventobonito.com/wp-content/uploads/2024/02/iconocolordoradoiglesia-300x300.png"
+              alt="Icono de iglesia">
           </div>
         </div>
       </div>
+      <!-- Marcador central -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 border-2 border-gray-300">
+        <i class="far fa-heart text-gray-500"></i>
+      </div>
+    </div>
 
-      <div class="uael-timeline-field relative mb-12">
-        <div class="uael-timeline-widget uael-timeline-left text-left pl-12">
-          <div class="uael-timeline-marker absolute top-0 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 border-2 border-gray-300">
-            <i class="far fa-heart text-gray-500"></i>
-          </div>
-          <div class="uael-day-new bg-white p-6 rounded-lg shadow-md">
-            <div class="uael-timeline-date-hide">
-              <p class="text-sm font-bold text-gray-700">19:30 HRS</p>
-            </div>
-            <div class="uael-content mt-2">
-              <h2 class="uael-timeline-heading text-xl font-bold text-gray-800">Presentación</h2>
-              <div class="uael-timeline-desc-content mt-2">
-                <img loading="lazy" decoding="async" class="w-24 h-24 mx-auto" src="https://eventobonito.com/wp-content/uploads/2024/04/EB-Iconos-web-41-300x300.png" alt="Icono de presentación">
-              </div>
-            </div>
+    <!-- Evento 2 - Derecha -->
+    <div class="relative mb-12 flex justify-end">
+      <div class="w-1/2 pr-8">
+        <div class="relative bg-white p-6 rounded-lg shadow-md">
+          <p class="text-sm font-sans text-gray-700 text-right">18:00 HRS</p>
+          <h2 class="text-xl font-sans text-gray-800 mt-2 text-right">Celebración</h2>
+          <div class="mt-4 flex justify-center">
+            <img class="w-24 h-24"
+              src="https://eventobonito.com/wp-content/uploads/2024/02/iconocolordoradoplato-300x300.png"
+              alt="Icono de celebración">
           </div>
         </div>
       </div>
-      
-      <div class="uael-timeline-field relative mb-12">
-        <div class="uael-timeline-widget uael-timeline-right text-right pr-12">
-          <div class="uael-timeline-marker absolute top-0 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 border-2 border-gray-300">
-            <i class="far fa-heart text-gray-500"></i>
-          </div>
-          <div class="uael-day-new bg-white p-6 rounded-lg shadow-md">
-            <div class="uael-timeline-date-hide">
-              <p class="text-sm font-bold text-gray-700">21:00 HRS</p>
-            </div>
-            <div class="uael-content mt-2">
-              <h2 class="uael-timeline-heading text-xl font-bold text-gray-800">Celebración</h2>
-              <div class="uael-timeline-desc-content mt-2">
-                <img loading="lazy" decoding="async" class="w-24 h-24 mx-auto" src="https://eventobonito.com/wp-content/uploads/2024/02/iconocolordoradoplato-300x300.png" alt="Icono de celebración">
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 border-2 border-gray-300">
+        <i class="far fa-heart text-gray-500"></i>
       </div>
+    </div>
 
-      <div class="uael-timeline-field relative mb-12">
-        <div class="uael-timeline-widget uael-timeline-left text-left pl-12">
-          <div class="uael-timeline-marker absolute top-0 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 border-2 border-gray-300">
-            <i class="far fa-heart text-gray-500"></i>
-          </div>
-          <div class="uael-day-new bg-white p-6 rounded-lg shadow-md">
-            <div class="uael-timeline-date-hide">
-              <p class="text-sm font-bold text-gray-700">22:00 HRS</p>
-            </div>
-            <div class="uael-content mt-2">
-              <h2 class="uael-timeline-heading text-xl font-bold text-gray-800">A bailar</h2>
-              <div class="uael-timeline-desc-content mt-2">
-                <img loading="lazy" decoding="async" class="w-24 h-24 mx-auto" src="https://eventobonito.com/wp-content/uploads/2024/02/iconocolordoradomusica-300x300.png" alt="Icono de música">
-              </div>
-            </div>
+    <!-- Evento 3 - Izquierda -->
+    <div class="relative mb-12 flex justify-start">
+      <div class="w-1/2 pl-8">
+        <div class="relative bg-white p-6 rounded-lg shadow-md">
+          <p class="text-sm font-sans text-gray-700">20:00 HRS</p>
+          <h2 class="text-xl font-sans text-gray-800 mt-2">A bailar</h2>
+          <div class="mt-4 flex justify-center">
+            <img class="w-24 h-24"
+              src="https://eventobonito.com/wp-content/uploads/2024/02/iconocolordoradomusica-300x300.png"
+              alt="Icono de música">
           </div>
         </div>
       </div>
-      
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-white rounded-full p-2 border-2 border-gray-300">
+        <i class="far fa-heart text-gray-500"></i>
+      </div>
     </div>
   </div>
 </div>
+
 
 <section class="p-8 text-center" style="background-image: url('URL_DE_IMAGEN_DE_FONDO');">
   <div class="bg-white bg-opacity-80 p-6 rounded-lg shadow-lg max-w-lg mx-auto">
     <div class="elementor-widget-wrap">
-      <h2 class="text-2xl md:text-3xl font-bold mb-2">Invitación para:</h2>
-      <h2 class="text-xl md:text-2xl font-semibold text-blue-600" id="counter_invite_name">Laura Salinas Garza</h2>
-      
-      <form class="mt-6" >
-        <div class="mb-4">
-          <label for="attendees" class="block text-sm font-medium text-gray-700">Asistentes</label>
-          <select id="attendees" name="attendees" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" required>
-            <option value="-1">Selecciona el número de asistentes</option>
-            <option value="0">No podremos asistir</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </div>
-        
-        <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-          CONFIRMAR
-        </button>
+      <h2 class="text-3xl font-sans mb-4">Confirma tu asistencia</h2>
+      <form class="mt-6">
+
+        <a class="whatsapp-btn" href="https://wa.me/524681325502?text=Confirmo%20asistencia%20al%20evento"
+          target="_blank">
+          ✅ Confirmar asistencia
+        </a>
       </form>
     </div>
   </div>
@@ -238,105 +207,31 @@
   <div class="absolute inset-0 bg-black opacity-50"></div>
   <div class="relative z-10 text-white">
     <div class="text-center mb-12">
-      <h3 class="text-2xl font-bold">Código de vestimenta</h3>
+      <h3 class="text-2xl font-sans">Código de vestimenta</h3>
       <p class="text-lg mt-2">FORMAL</p>
       <div class="flex justify-center mt-4">
-        <img loading="lazy" decoding="async" width="150" height="137" src="https://eventobonito.com/wp-content/uploads/2024/02/iconodresscode.png" class="w-2/3 max-w-xs" alt="Icono de código de vestimenta">
-      </div>
-    </div>
-    
-    <div class="text-center mb-12">
-      <h3 class="text-2xl font-bold">Regalos</h3>
-      <p class="text-lg mt-2">El regalo es opcional, la asistencia obligatoria, pero si quieres tener un detalle conmigo te doy algunas ideas.</p>
-
-      <div class="mt-8 flex flex-col items-center space-y-4">
-        <div class="w-full max-w-md">
-          <div class="border border-white rounded-lg overflow-hidden">
-            <button class="w-full text-left p-4 flex justify-between items-center bg-gray-700 hover:bg-gray-600 focus:outline-none">
-              <span class="text-lg font-semibold">Ver número de cuenta</span>
-              <i class="fas"></i>
-            </button>
-            <div class="p-4 bg-gray-800 text-sm">
-              <p>Santander</p>
-              <p>ES99 0000 0000 0000</p>
-              <p>Andrés González González</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex items-center space-x-4">
-          <i class="far fa-envelope text-4xl"></i>
-          <h3 class="text-lg font-bold">Caja de sobres</h3>
-        </div>
-
-        <div class="text-center">
-          <img loading="lazy" decoding="async" src="https://eventobonito.com/wp-content/uploads/2024/02/icono-amazon.png" class="w-48 h-auto mx-auto" alt="Logo de Amazon">
-          <a href="#" class="block text-lg font-semibold mt-2 hover:underline">Ver mesa de regalos</a>
-          <p class="text-sm">No. Evento 51012067</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mb-12">
-      <h3 class="text-2xl font-bold">Sugerencias</h3>
-      
-      <div class="w-full max-w-md mx-auto mt-4">
-        <div class="border border-white rounded-lg overflow-hidden">
-          <button class="w-full text-left p-4 flex justify-between items-center bg-gray-700 hover:bg-gray-600 focus:outline-none" >
-            <span class="text-lg font-semibold">Hospedaje</span>
-            <i class="fas"></i>
-          </button>
-          <div class="p-4 bg-gray-800 text-sm text-left">
-            <p>Hotel Encore<br>Telf. 614 442 9090<br><a href="#" class="underline text-blue-400">Ver mapa</a></p>
-            <p class="mt-2">Best Western Plus, Juventud.<br>Telf. 614 346 1111<br><a href="#" class="underline text-blue-400">Ver mapa</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full max-w-md mx-auto mt-4">
-        <div class="border border-white rounded-lg overflow-hidden">
-          <button class="w-full text-left p-4 flex justify-between items-center bg-gray-700 hover:bg-gray-600 focus:outline-none">
-            <span class="text-lg font-semibold">Lugares turísticos</span>
-            <i class="fas" ></i>
-          </button>
-          <div class="p-4 bg-gray-800 text-sm text-left">
-            <ul>
-              <li>Mirador del Agua</li>
-              <li>Calle Santa Cristina</li>
-              <li>Centro histórico</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="text-center">
-      <h3 class="text-2xl font-bold">¿Me ayudas con la playlist?</h3>
-      <a href="https://www.youtube.com/playlist?list=PLrmyaJ2asXvtUmmlQ4Ter0PIi9hX8AX7Q" target="_blank" class="inline-block px-6 py-3 mt-4 text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors">
-        <i class="fas fa-plus mr-2"></i>Agregar una canción
-      </a>
-      <div class="mt-8">
-        <iframe class="w-full" height="315" src="https://www.youtube.com/embed/videoseries?si=krvqHWRBHbv-awo_&amp;list=PLrmyaJ2asXvtUmmlQ4Ter0PIi9hX8AX7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <img loading="lazy" decoding="async" width="150" height="137"
+          src="https://eventobonito.com/wp-content/uploads/2024/02/iconodresscode.png" class="w-2/3 max-w-xs"
+          alt="Icono de código de vestimenta">
       </div>
     </div>
   </div>
 </section>
 
 <section class="p-8 relative" style="background-image: url('URL_DE_IMAGEN_DE_FONDO');">
-  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="absolute inset-0 bg-[#7a6200]"></div>
   <div class="relative z-10 text-white text-center">
-    <h2 class="text-4xl font-bold mb-8">Galería</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="relative overflow-hidden rounded-lg shadow-lg">
-        <img loading="lazy" decoding="async" src="https://eventobonito.com/wp-content/uploads/2022/08/galeria-xv-2.png" class="w-full h-auto" alt="Galería de fotos 1">
+        <img loading="lazy" decoding="async"
+          src="https://eventobonito.com/wp-content/uploads/2022/08/galeria-xv-años.png" class="w-full h-auto"
+          alt="Galería de fotos 2">
         <div class="absolute inset-0 bg-black bg-opacity-40 hover:bg-opacity-0 transition-all duration-300"></div>
       </div>
       <div class="relative overflow-hidden rounded-lg shadow-lg">
-        <img loading="lazy" decoding="async" src="https://eventobonito.com/wp-content/uploads/2022/08/galeria-xv-años.png" class="w-full h-auto" alt="Galería de fotos 2">
-        <div class="absolute inset-0 bg-black bg-opacity-40 hover:bg-opacity-0 transition-all duration-300"></div>
-      </div>
-      <div class="relative overflow-hidden rounded-lg shadow-lg">
-        <img loading="lazy" decoding="async" src="https://eventobonito.com/wp-content/uploads/2022/08/galeria-xvañosa.png" class="w-full h-auto" alt="Galería de fotos 3">
+        <img loading="lazy" decoding="async"
+          src="https://eventobonito.com/wp-content/uploads/2022/08/galeria-xvañosa.png" class="w-full h-auto"
+          alt="Galería de fotos 3">
         <div class="absolute inset-0 bg-black bg-opacity-40 hover:bg-opacity-0 transition-all duration-300"></div>
       </div>
     </div>
