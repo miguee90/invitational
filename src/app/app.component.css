@@ -10,3 +10,15 @@
     text-decoration: none;
     transition: background 0.3s;
   }
+
+  @keyframes rainbow-glow {
+  0% { box-shadow: 0 0 25px 5px rgba(255, 99, 132, 0.6); }
+  25% { box-shadow: 0 0 25px 5px rgba(255, 205, 86, 0.6); }
+  50% { box-shadow: 0 0 25px 5px rgba(75, 192, 192, 0.6); }
+  75% { box-shadow: 0 0 25px 5px rgba(54, 162, 235, 0.6); }
+  100% { box-shadow: 0 0 25px 5px rgba(255, 99, 132, 0.6); }
+}
+
+.animate-glow button {
+  animation: rainbow-glow 3s infinite alternate;
+}

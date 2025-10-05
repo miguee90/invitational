@@ -217,6 +217,23 @@
   </div>
 </section>
 
+
+<!-- Botón flotante -->
+<button (click)="toggleMusic()"
+  class="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-lg flex items-center justify-center text-white transition-all duration-300"
+  [ngClass]="isPlaying ? 'bg-green-500 hover:bg-green-600 animate-pulse' : 'bg-blue-500 hover:bg-blue-600'">
+  <svg *ngIf="!isPlaying" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+    <path d="M8 5v14l11-7z" />
+  </svg>
+
+  <svg *ngIf="isPlaying" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+  </svg>
+</button>
+
+<!-- Elemento de audio -->
+<audio #audioRef src="assets/music.mp3" loop></audio>
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
